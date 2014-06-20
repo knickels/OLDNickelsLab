@@ -1,0 +1,62 @@
+#go straight until hit a wall
+#new robot design (square)
+#robot have 8 senors, 2 on each side of the robot to sense when it reaches the wall on any side
+#one sensor on the rihgt and one on the left, the same all the way around
+#this will allow the robot to determine how far away it is and ya, could also do odometry but screw it.
+#robot will go straight until it reaches a wall, it will then turn until the sensors on one side of the robot determine the robot to be 1 meter from the wall, having two sensors will assure that #the robot will always be parallel to the wall.
+
+
+define tangermangos_sonar ranger
+(
+	#number of sonars
+	scount 8
+
+	#define the pose of each trandsucer [xpose ypos heading]
+	spose[0] [0.5 0.25 0] #top right facing right
+	spose[1] [0.5 -0.25 0] #bottom right facing right
+	spose[2] [0.25 0.5 90] # top right facing up
+	spose[3] [-0.25 0.5 90] # top left facing up
+	spose[4] [-0.5 0.25 180] #top left facing left
+	spose[5] [-0.5 -0.25 180] #bottom left facing left
+	spose[6] [-0.25 -0.5 270] #bottom left facing bottom
+	spose[7] [0.25 -0.5 270] #bottom right facing bottom
+
+	#define the field of view of each tranducer 
+	#[ranger_min range_max view_angle]
+	sview [0.5 1.0 10]
+
+	#define the size of each tranducer [xsize ysize] in metres
+	ssize [0.01 0.05]
+)
+
+
+define tangermango position
+(
+	#actual size
+	size [1 1 0.5]
+
+	# centre of rotation offset
+	origin [0 0 0 0]
+
+	block
+	(
+		points 4
+		point[0] [1 0]
+		point[1] [1 1]
+		point[2] [0 1]
+		point[3] [0 0]
+		z [0 1]
+	)
+
+	#positional things
+	drive "diff"
+
+	#sensors attached to tangermango
+	tangermangos_sonar()
+	#can hit things
+	obstacle_return 1
+	#reflects sonar beams
+	ranger_return 1
+)
+
+

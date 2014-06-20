@@ -1,0 +1,29 @@
+E-puck Side of Player Driver.
+-----------------------------
+
+In this folder is the code from program which will be ran in the e-puck's
+dsPIC. This program will receive the requests from e-puck player driver and
+will perform the related action in robot hardware.
+
+To compile it will be required a C code to dsPIC 30F6014A compiler. The one
+that I have making use is the MplabC30, from Michoship. It haven't native
+linux code, but can be ran by wine. Also is needed the e-puck project library,
+that may be found in [http://www.e-puck.org].
+
+For compile the code, there are a Makefile and a script linker.py. Before
+run them, they must be configured. In Makefile, the variable INCLUDE must to
+be in mold: "INCLUDE = -I<path to libepuck install>/include -I<path to
+mplabC30 install>/support/h", and the variable CC must be:
+"CC = wine <path to mplabC30 install>/bin/pic30-coff-gcc.exe".
+
+In linker.py the variable MPLAB_C30_PATH must be "<path to mplabC30 install>".
+
+If the files are already configured, for compile only make:
+$ make
+$ ./linker.py
+The outcome is a file output.hex, which must be loaded in e-puck memory.
+
+A copy of output.hex, i.e. the source already compiled, is here for facility.
+
+The object files in folder libObj were compiled from e-puck project library,
+and their source can be found in <https://gna.org/projects/e-puck>.

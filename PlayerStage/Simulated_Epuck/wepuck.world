@@ -1,0 +1,29 @@
+include "map.inc"
+include "epuck.inc"
+
+# size of the whole simulation
+size [1.22 1.22 0.1]
+
+# configure the GUI window
+window
+(
+size [ 700.000 700.000 ]
+scale 560
+)
+
+# load an environment bitmap
+floorplan
+(
+bitmap "bitmaps/map.jpg"
+size [1.22 1.22 0.1]
+ranger_return 1
+laser_return 1
+obstacle_return 0
+)
+
+epuck
+(
+name "epuck_1"
+pose [0.0 0.0 0 0]
+color "red"
+)

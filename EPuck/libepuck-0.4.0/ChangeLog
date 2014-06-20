@@ -1,0 +1,15 @@
+Version 0.4:
+ * Added support for Player 2.1.X;
+ * Added support for LEDs. Blinkenlight interface in Player 2.1.X and opaque
+   interface in Player 2.0.X;
+ * Added compatibility with the new e-puck cameras (PO6030K);
+ * The image grabbed from camera is delivered always in correct orientation.
+
+Version 0.3:
+ * Added the camera interface.
+ * Improved the synchronization between e-puck and PC, saving CPU processing.
+ * Reorganized the documentation files in general.
+
+Version 0.2:
+ * Initial release.
+ * Implemented position2d and ir interfaces.

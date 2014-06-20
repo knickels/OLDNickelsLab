@@ -1,0 +1,5 @@
+\form#0:\[ \frac{ \mathrm{sensor\_width} }{ \mathrm{zoom\_fact\_width} } \cdot \frac{ \mathrm{sensor\_height} }{ \mathrm{zoom\_fact\_height} } \]
+\form#1:\[ \frac{ \mathrm{sensor\_width} }{ \mathrm{zoom\_fact\_width} } \]
+\form#2:\[ \frac{ \mathrm{sensor\_height} }{ \mathrm{zoom\_fact\_height} } \]
+\form#3:\[ \frac{640 - \mathrm{sensor\_width} }{2} \]
+\form#4:\[ \frac{480 - \mathrm{sensor\_height} }{2} \]
