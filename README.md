@@ -8,3 +8,5 @@ EPuck - code for the gctronics epuck robot, including demo code that came with i
 PlayerStage - controllers for player/stage, including python interfaces
 
 SLAM - programs dealing with robotic mapping and simultaneous localization and mapping
+
+Papers - helpful papers others have written, as well as documentation of our papers.
