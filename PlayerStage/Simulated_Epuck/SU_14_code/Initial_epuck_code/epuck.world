@@ -1,0 +1,45 @@
+#Populated world for E-Puck simulation
+#Author: Roland Green
+#Date 05/06/14
+#world file
+include "map.inc"
+include "new_stage_model.inc"
+
+# configure the GUI window
+window
+(
+size [525.000 525.000]
+scale 200
+)
+
+# load an environment bitmap
+floorplan
+(
+bitmap "bitmaps/example_1.png"
+size [0.711 0.711 0.1]
+ranger_return 1
+obstacle_return 1 
+)
+
+epuck
+(
+name "epuck_1"
+pose [0.0 0.0 0 0]
+epuck_IR()
+#epuck_cam( pose [0.0 0.0 0 0])
+color "red"
+localization "odom"
+odom_error [0 0.5 0 0.0 0 0.9]
+)
+
+
+epuck
+(
+name "epuck_2"
+pose [0.0 0.0 0 0]
+epuck_IR()
+#epuck_cam( pose [0.0 0.0 0 0])
+color "blue"
+localization "gps"
+localization_origin [0 0 0 0]
+)
