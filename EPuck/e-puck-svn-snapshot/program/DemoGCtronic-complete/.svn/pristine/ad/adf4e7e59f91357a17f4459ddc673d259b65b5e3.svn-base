@@ -1,0 +1,484 @@
+#include "p30f6014A.h"
+
+#define IR_RECIEVER
+
+#include "stdio.h"
+#include "string.h"
+#include "math.h"
+#include <time.h>
+
+#include <codec/e_sound.h>
+#include <motor_led/e_init_port.h>
+#include <motor_led/advance_one_timer/e_led.h>
+#include <motor_led/advance_one_timer/e_motors.h>
+#include <motor_led/advance_one_timer/e_agenda.h>
+#include <camera/fast_2_timer/e_poxxxx.h>
+#include <uart/e_uart_char.h>
+#include <a_d/advance_ad_scan/e_ad_conv.h>
+#include <a_d/advance_ad_scan/e_prox.h>
+#include <a_d/advance_ad_scan/e_acc.h>
+#include <a_d/advance_ad_scan/e_micro.h>
+#include <bluetooth/e_bluetooth.h>
+#include <motor_led/e_epuck_ports.h>
+/* selector on normal extension*/
+
+#define SELECTOR0 _RG6
+
+#define SELECTOR1 _RG7
+
+#define SELECTOR2 _RG8
+
+#define SELECTOR3 _RG9
+
+#include "memory.h"
+char buffer[BUFFER_SIZE];
+
+#ifdef IR_RECIEVER
+#include <motor_led/advance_one_timer/e_remote_control.h>
+#define SPEED_IR 600
+#endif 
+#include "runaccelerometer.h"
+#include "runbreitenberg_adv.h"
+#include "runlocatesound.h"
+#include "runwallfollow.h"
+#include "rungrounddirection.h"
+#include "utility.h"
+#include "Asercom.h"
+#include "runshow.h"
+#include "translatorI2C.h"
+
+#define PI 3.14159265358979
+
+#define uart2_send_static_text(msg) { e_send_uart2_char(msg,sizeof(msg)-1); while(e_uart2_sending()); }
+#define uart1_send_static_text(msg) { e_send_uart1_char(msg,sizeof(msg)-1); while(e_uart1_sending()); }
+
+int main() {
+	//SLEEP(); while(1);
+
+	int selector, version, i, r=-1, g=-1, b=-1;
+	char c;
+	//char command[20];
+	//char response[50];
+
+	//system initialization 
+	e_init_port();    // configure port pins
+	e_start_agendas_processing();
+	e_init_motors();
+	e_init_uart1();   // initialize UART to 115200 Kbaud
+	e_init_uart2();   // initialize UART to 115200 Kbaud
+	e_init_ad_scan(ALL_ADC);
+	//e_init_ad_scan();
+
+	//Reset if Power on (some problem for few robots)
+	if (RCONbits.POR) {
+		RCONbits.POR=0;
+		__asm__ volatile ("reset");
+	}
+
+	// Decide upon program
+	selector=getselector();
+	sprintf(buffer, "Selector pos %d\r\n", selector);
+	e_send_uart1_char(buffer, strlen(buffer));
+	while(e_uart1_sending());
+
+
+	if (selector==0) {
+		run_accelerometer();
+	} else if (selector==1) {
+		run_locatesound();
+	} else if (selector==2) {
+		run_wallfollow();
+	} else if (selector==3) {
+		//SIO_C_DIR= INPUT_PIN;
+		//SIO_D_DIR= INPUT_PIN;
+		//CAM_RESET_DIR = INPUT_PIN;
+
+		run_asercom();		// advanced sercom protocol
+	} else if (selector==5) {	// sensor "feedback display"
+		run_SensDispl();
+	} else if (selector==6) {	// camera point to light
+		run_CameraTurn();
+	} else if (selector==7) {	// act like the ASL RS232 - I2C translator
+		run_translatorI2C();
+	} else if (selector==8) {	
+		run_grounddirection();
+	} else if (selector==10) {
+		//the following 3 lines are needed to release completely the camera on the robot and let use the camera on the gumstix ext.
+		SIO_C_DIR= INPUT_PIN;
+		SIO_D_DIR= INPUT_PIN;
+		CAM_RESET_DIR = INPUT_PIN;
+
+/*
+		ADCON1bits.ADON = 0;	//Stop A/D
+		T1CONbits.TON = 0;	//Stop timer1
+		T2CONbits.TON = 0;	//Stop timer2
+
+		T3CONbits.TON = 0;	//Stop timer3
+		U1MODEbits.UARTEN = 0;	//Disable uart1
+		U2MODEbits.UARTEN = 0;	//Disable uart2
+		I2CCONbits.I2CEN=0;	//Disable I2C
+
+		IEC0bits.ADIE = 0;	//Disable A/D interrupt
+		STOP_TMR1;		//Disable timer1 interrupt
+		STOP_TMR2;		//Disable timer2 interrupt
+		STOP_TMR3;		//Disable timer3 interrupt
+		IEC0bits.U1RXIE = 0;	//Disable uart1 rx interrupt
+		IEC0bits.U1TXIE = 0;	//Disable uart1 tx interrupt
+		IEC1bits.U2RXIE = 0;	//Disable uart2 rx interrupt
+		IEC1bits.U2TXIE = 0;	//Disable uart2 tx interrupt
+*/
+		//e_i2c_disable();	//Disable I2C interrupt
+
+//the following commented code isn't necessary to put the robot in sleep mode
+/*
+		IEC0bits.INT0IE=0;
+
+        	IEC0bits.IC1IE=0;
+
+        	IEC0bits.OC1IE=0;
+
+        	IEC0bits.T1IE=0;
+
+        	IEC0bits.IC2IE=0;
+
+        	IEC0bits.OC2IE=0;
+
+        	IEC0bits.T2IE=0;
+
+        	IEC0bits.T3IE=0;
+
+        	IEC0bits.SPI1IE=0;
+
+        	IEC0bits.U1RXIE=0;
+
+        	IEC0bits.U1TXIE=0;
+
+        	IEC0bits.ADIE=0;
+
+        	IEC0bits.NVMIE=0;
+
+        	IEC0bits.SI2CIE=0;
+
+        	IEC0bits.MI2CIE=0;
+
+        	IEC0bits.CNIE=0;
+
+
+
+        	IEC1bits.INT1IE=0;
+
+        	IEC1bits.IC7IE=0;
+
+        	IEC1bits.IC8IE=0;
+
+        	IEC1bits.OC3IE=0;
+
+        	IEC1bits.OC4IE=0;
+
+        	IEC1bits.T4IE=0;
+
+        	IEC1bits.T5IE=0;
+
+        	IEC1bits.INT2IE=0;
+
+        	IEC1bits.U2RXIE=0;
+
+        	IEC1bits.U2TXIE=0;
+
+        	IEC1bits.SPI2IE=0;
+
+        	IEC1bits.C1IE=0;
+
+        	IEC1bits.IC3IE=0;
+
+        	IEC1bits.IC4IE=0;
+
+        	IEC1bits.IC5IE=0;
+
+        	IEC1bits.IC6IE=0;
+
+
+
+        	IEC2bits.OC5IE=0;
+
+        	IEC2bits.OC6IE=0;
+
+        	IEC2bits.OC7IE=0;
+
+        	IEC2bits.OC8IE=0;
+
+        	IEC2bits.INT3IE=0;
+
+        	IEC2bits.INT4IE=0;
+
+        	IEC2bits.C2IE=0;
+
+        	//IEC2bits.PWMIE=0;
+
+        	//IEC2bits.QEIIE=0;
+
+        	//IEC2bits.FLTAIE=0;
+
+        	//IEC2bits.FLTBIE=0;
+
+*/
+		//SLEEP();	//sleep mode
+
+	} else if (selector==11) {	// BT configuration	
+
+		 sprintf(buffer, "\f\a\n\n\rWELCOME to the protocol on e-Puck Bluetooth calibration");
+
+		 e_send_uart2_char(buffer, strlen(buffer));  //send string
+
+		while(e_uart2_sending());
+
+		memset(buffer, 0x0, 120); 
+		sprintf(buffer, "\n\rPress H (return) for help");
+
+		 e_send_uart2_char(buffer, strlen(buffer));  //send string
+
+ 		while(e_uart2_sending());
+
+		memset(buffer, 0x0, 120);
+		
+		while(1)
+
+		{	
+
+		   i = 0;
+
+			c=0;
+
+		   do
+
+		   {
+
+		     	if (e_getchar_uart2(&buffer[100+i])) //&command[i]))
+
+				{	
+
+					c=buffer[100+i];//command[i];
+
+		    		i++;
+
+				}	
+
+		   }
+
+		   while (((char)c != '\n')&&((char)c != '\x0d'));
+
+		   buffer[100+i]='\0'; //command[i]='\0';
+
+			
+
+		memset(buffer, 0x0, 100);
+
+		   switch (buffer[100]) 
+
+		   { 
+
+			case 'P':	e_bt_read_local_pin_number(buffer);
+
+						sprintf(&buffer[50],"\n\rPIN code = %s",buffer);
+
+						break;
+
+			case 'O':	sscanf(&buffer[100],"O,%s\n",buffer);
+
+						if(e_bt_write_local_pin_number(buffer))
+
+							sprintf(&buffer[50],"\n\rError writting PIN");
+
+						else
+
+							sprintf(&buffer[50],"\n\rPIN code = %s",buffer);
+
+						break;
+
+			case 'M':	sscanf(&buffer[100],"M,%s\n",buffer);
+
+						if(e_bt_write_local_name(buffer))
+
+							sprintf(&buffer[50],"\n\rError writting Name");
+
+						else
+
+							sprintf(&buffer[50],"\n\rFriendly name = %s",buffer);
+
+						break;
+
+			case 'S':	sscanf(&buffer[100],"S,%s\n",buffer);
+
+						if(e_bt_write_local_pin_number(buffer))
+
+							sprintf(&buffer[50],"\n\rError writting PIN");
+
+						else
+
+							sprintf(&buffer[50],"\n\rPIN code = %s",buffer);
+
+						e_send_uart2_char(&buffer[50],strlen(&buffer[50])); 
+
+						while(e_uart2_sending());
+
+						sprintf(&buffer[100],"e-puck_%s",buffer);
+
+						if(e_bt_write_local_name(&buffer[100]))
+
+							sprintf(&buffer[50],"\n\rError writting Name");
+
+						else
+
+							sprintf(&buffer[50],"\n\rFriendly name = %s",&buffer[100]);
+
+						break;
+
+			case 'N':	e_bt_read_local_name(buffer);
+
+						sprintf(&buffer[50],"\n\rFriendly name = %s",buffer);
+
+						break;
+
+			case 'R':	version=e_bt_reset();
+
+						sprintf(&buffer[50],"\n\rReset ok Firmware = %d",version);
+
+						break;
+			case 'F':	e_bt_factory_reset();
+					break;
+
+			case 'H':	uart2_send_static_text("\n\r \"F\" Factory reset");
+						uart2_send_static_text("\n\r \"M,Name\" Write Name for Friendly Bluetooth name");
+
+						uart2_send_static_text("\n\r \"N\" Read actual Friendly Bluetooth name");
+
+						uart2_send_static_text("\n\r \"O,#\" Write # PIN number");
+
+						uart2_send_static_text("\n\r \"P\" Read actual PIN number"); 
+
+						uart2_send_static_text("\n\r \"R\" Soft reset Bluetooth module");	
+
+						uart2_send_static_text("\n\r \"S,#\" Write # PIN number and same time e-puck_#");	
+
+						
+
+						buffer[50]='\n';
+
+						buffer[51]='\0';
+
+						break;
+
+		   	default:    sprintf(&buffer[50],"\n\rz,Command not found");
+
+		                 	break;
+
+		   }
+
+		   e_send_uart2_char(&buffer[50],strlen(&buffer[50]));
+
+		   while(e_uart2_sending());
+
+		 }		
+
+	} else if (selector==12) {	// Global test
+		sprintf(buffer, "%c%c%d;%d;%dm", 0x1B, 0x5B, 1, 37, 44);	//bold
+		e_send_uart2_char(buffer, strlen(buffer));
+
+		// calibrate proximity sensors
+		uart2_send_static_text("\f\aStarting calibration - Remove any object in sensors range\r\n");
+		e_calibrate_ir();
+		uart2_send_static_text("Calibration finished\r\n");
+
+		// sound
+		e_init_sound();
+		e_play_sound(11028,8016);
+		wait(800000);
+
+		// set motor speed
+		e_set_speed_left(100);
+		e_set_speed_right(100);
+
+		// init camera
+		e_poxxxx_init_cam();
+		e_poxxxx_config_cam((ARRAY_WIDTH -40*8)/2,(ARRAY_HEIGHT-40*8)/2,40*8,40*8,8,8,RGB_565_MODE);
+		e_poxxxx_set_mirror(1,1);
+		e_poxxxx_write_cam_registers();
+
+		// set body led
+		e_set_body_led(1);
+	
+		// set front led
+		e_set_front_led(1);
+	
+		// set others LEDs
+		e_set_led(8,1);
+
+		uart2_send_static_text("\f\a");
+		while(1) {
+
+			// read accelerometer
+			//ESC]2k => clear line
+			sprintf(buffer,"%c%cH\r\nACCELEROMETER\r\n%c%c2K%4d, %4d, %4d\r\n\n", 0x1B, 0x5B, 0x1B, 0x5B, e_get_acc(0),e_get_acc(1),e_get_acc(2));
+			e_send_uart2_char(buffer, strlen(buffer));
+			while(e_uart2_sending());
+
+			// read selector position
+			selector = SELECTOR0 + 2*SELECTOR1 + 4*SELECTOR2 + 8*SELECTOR3;
+			sprintf(buffer,"SELECTOR\r\n%c%c2K%2d\r\n\n",0x1B, 0x5B, selector);
+			e_send_uart2_char(buffer, strlen(buffer));
+			while(e_uart2_sending());
+
+			// read IR
+                  	sprintf(buffer,"IR\r\n%c%c2Kcheck : 0x%x, address : 0x%x, data : 0x%x\r\n\n", 0x1B, 0x5B, e_get_check(), e_get_address(), e_get_data());
+                  	e_send_uart2_char(buffer, strlen(buffer));
+			while(e_uart2_sending());
+
+			// read proximity sensors
+			sprintf(buffer,"PROXIMITY SENSORS\r\n%c%c2K%4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d\r\n\n", 0x1B, 0x5B, 
+			e_get_prox(0),e_get_prox(1),e_get_prox(2),e_get_prox(3),
+			e_get_prox(4),e_get_prox(5),e_get_prox(6),e_get_prox(7));
+			e_send_uart2_char(buffer, strlen(buffer));
+			while(e_uart2_sending());
+
+			sprintf(buffer,"AMBIENT LIGHT SENSORS\r\n%c%c2K%4d,%4d,%4d,%4d,%4d,%4d,%4d,%4d\r\n\n", 0x1B, 0x5B,
+			e_get_ambient_light(0),e_get_ambient_light(1),e_get_ambient_light(2),e_get_ambient_light(3),
+			e_get_ambient_light(4),e_get_ambient_light(5),e_get_ambient_light(6),e_get_ambient_light(7));
+			e_send_uart2_char(buffer, strlen(buffer));
+			while(e_uart2_sending());
+
+			// micro
+			sprintf(buffer,"MICROPHONE\r\n%c%c2K%4d,%4d,%4d\r\n\n",0x1B, 0x5B, e_get_micro_volume(0),e_get_micro_volume(1),e_get_micro_volume(2));
+			e_send_uart2_char(buffer, strlen(buffer));
+			while(e_uart2_sending());
+
+			//camera
+			e_poxxxx_launch_capture(&buffer[0]);
+			while(!e_poxxxx_is_img_ready());
+                        r = (int)buffer[0]&0xF8;
+                        g = (int)(buffer[0]&0x07)<<5 | (buffer[1]&0xE0)>>3;
+                        b = (int)(buffer[1]&0x1F)<<3;
+			sprintf(&buffer[3200], "CAMERA\r\n%c%c2KR=%3d, G=%3d, B=%3d\r\n\n",0x1B, 0x5B, r, g, b);
+			e_send_uart2_char(&buffer[3200], strlen(&buffer[3200]));
+			while(e_uart2_sending());
+			
+			for(i=0; i<100; i++);
+		} 
+	} else if (selector==13) {	// uart 1 to uart 2 transponder
+		//e_init_uart2();// 230400   // initialize UART to 115200 Kbaud
+		e_send_uart2_char(buffer, strlen(buffer));
+		while (1) {
+			if(e_getchar_uart1(&c)) e_send_uart2_char(&c, 1);
+			if(e_getchar_uart2(&c)) e_send_uart1_char(&c, 1);
+		}
+	} else if (selector==14) {
+		run_breitenberg_follower();
+	} else if (selector==15) {	// simple dust cleaner behaviour
+		run_DustCleaner();
+	} else {
+		run_breitenberg_shocker();
+	}
+
+	while(1);
+	return 0;
+}
+
