@@ -55,6 +55,9 @@ char c;
 #define uart2_send_static_text(msg) { e_send_uart2_char(msg,sizeof(msg)-1); while(e_uart2_sending()); }
 #define uart1_send_static_text(msg) { e_send_uart1_char(msg,sizeof(msg)-1); while(e_uart1_sending()); }
 
+
+int epuckPlayer(void);
+
 int main() {
 	//SLEEP(); while(1);
 
@@ -359,11 +362,12 @@ int main() {
 			if(e_getchar_uart2(&c)) e_send_uart1_char(&c, 1);
 		}
 	} else if (selector==14) {
-		run_breitenberg_follower();
+		//run_breitenberg_follower();
 	} else if (selector==15) {	// simple dust cleaner behaviour
-		run_DustCleaner();
+                //run_DustCleaner();
+                epuckPlayer();
 	} else {
-		run_breitenberg_shocker();
+		//run_breitenberg_shocker();
 	}
 
 	while(1);

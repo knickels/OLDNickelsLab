@@ -68,6 +68,7 @@
       <itemPath>../camera/fast_2_timer/e_po3030k_registers.c</itemPath>
       <itemPath>../a_d/advance_ad_scan/e_prox.c</itemPath>
       <itemPath>../camera/fast_2_timer/e_timers.c</itemPath>
+      <itemPath>../epuckPlayer.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -78,6 +79,7 @@
   <sourceRootList>
     <Elem>../</Elem>
     <Elem>../../../../../../../Program Files/Microchip/xc16/v1.21/support/dsPIC30F/gld</Elem>
+    <Elem>../../../../Users/admin1/Downloads</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -170,7 +172,7 @@
         <property key="general-code-protect" value="no_code_protect"/>
         <property key="general-write-protect" value="no_write_protect"/>
         <property key="generate-cross-reference-file" value="false"/>
-        <property key="heap-size" value="128"/>
+        <property key="heap-size" value="50"/>
         <property key="input-libraries" value=""/>
         <property key="linker-symbols" value=""/>
         <property key="map-file" value="&quot;${DISTDIR}/demoGCtronic.X.${IMAGE_TYPE}.map&quot;"/>
