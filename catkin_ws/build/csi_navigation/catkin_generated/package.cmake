@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "csi_navigation")
+set(csi_navigation_MAINTAINER "Niti Nararidh <nnararid@trinity.edu>")
+set(csi_navigation_DEPRECATED "")
+set(csi_navigation_VERSION "0.0.0")
+set(csi_navigation_BUILD_DEPENDS "geometry_msgs" "roscpp" "rospy" "std_msgs" "move_base" "move_base_msgs")
+set(csi_navigation_RUN_DEPENDS "geometry_msgs" "roscpp" "rospy" "std_msgs" "move_base" "move_base_msgs")
+set(csi_navigation_BUILDTOOL_DEPENDS "catkin")
