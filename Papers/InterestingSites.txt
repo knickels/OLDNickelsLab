@@ -1,6 +1,0 @@
-SLAM Summer Schools
-
-2009 - http://www.acfr.usyd.edu.au/education/summerschool.shtml
-2006 - http://www.robots.ox.ac.uk/~SSS06/Website/index.html
-2004 - LAAS-CNRS, Toulouse  - http://www.laas.fr/SLAM/
-2002 - KTH, Stockholm  - http://www.cas.kth.se/SLAM/
