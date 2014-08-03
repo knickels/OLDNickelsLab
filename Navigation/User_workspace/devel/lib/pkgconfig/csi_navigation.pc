@@ -1,0 +1,8 @@
+prefix=/home/nnararid/catkin_ws/devel
+
+Name: csi_navigation
+Description: Description of csi_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/nnararid/catkin_ws/devel/lib 
+Requires: 
