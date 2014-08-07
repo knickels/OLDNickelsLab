@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -Wall   -shared -Wl,-soname,libpmap.so.3.0 -o libpmap.so.3.0.2 CMakeFiles/pmap.dir/logfile.o CMakeFiles/pmap.dir/omap.o CMakeFiles/pmap.dir/pmap.o CMakeFiles/pmap.dir/rmap.o CMakeFiles/pmap.dir/slap.o -lGLU -lGL -lSM -lICE -lX11 -lXext -lglut -lXmu -lXi -lgsl -lgslcblas -lm -Wl,-rpath,/usr/local/lib64 
