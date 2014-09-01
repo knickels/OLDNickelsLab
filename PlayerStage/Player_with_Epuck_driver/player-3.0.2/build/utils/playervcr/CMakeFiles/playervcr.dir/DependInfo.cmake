@@ -1,0 +1,18 @@
+# The set of languages for which implicit dependencies are needed:
+SET(CMAKE_DEPENDS_LANGUAGES
+  "C"
+  )
+# The set of files for implicit dependencies of each language:
+SET(CMAKE_DEPENDS_CHECK_C
+  "/usr/local/src/player-3.0.2/utils/playervcr/playervcr.c" "/usr/local/src/player-3.0.2/build/utils/playervcr/CMakeFiles/playervcr.dir/playervcr.o"
+  )
+SET(CMAKE_C_COMPILER_ID "GNU")
+
+# Targets to which this target links.
+SET(CMAKE_TARGET_LINKED_INFO_FILES
+  "/usr/local/src/player-3.0.2/build/client_libs/libplayerc/CMakeFiles/playerc.dir/DependInfo.cmake"
+  "/usr/local/src/player-3.0.2/build/libplayerinterface/CMakeFiles/playerinterface.dir/DependInfo.cmake"
+  "/usr/local/src/player-3.0.2/build/libplayercommon/CMakeFiles/playercommon.dir/DependInfo.cmake"
+  "/usr/local/src/player-3.0.2/build/libplayerwkb/CMakeFiles/playerwkb.dir/DependInfo.cmake"
+  "/usr/local/src/player-3.0.2/build/libplayerjpeg/CMakeFiles/playerjpeg.dir/DependInfo.cmake"
+  )

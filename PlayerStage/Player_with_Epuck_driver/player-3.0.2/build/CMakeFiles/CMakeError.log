@@ -1,0 +1,538 @@
+Determining if files dns_sd.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:20: fatal error: dns_sd.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <dns_sd.h>
+
+
+int main(){return 0;}
+
+Determining if files sys/filio.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:23: fatal error: sys/filio.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <sys/filio.h>
+
+
+int main(){return 0;}
+
+Determining if files ieeefp.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:20: fatal error: ieeefp.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <ieeefp.h>
+
+
+int main(){return 0;}
+
+Determining if the function GEOSGeomFromWKB_buf exists in the geos_c failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=GEOSGeomFromWKB_buf   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall  -DCHECK_FUNCTION_EXISTS=GEOSGeomFromWKB_buf    CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic -lgeos_c 
+/usr/bin/ld: cannot find -lgeos_c
+collect2: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+
+Determining if the system is big endian passed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/TestEndianess.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/TestEndianess.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall      CMakeFiles/cmTryCompileExec.dir/TestEndianess.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the include file Device.h exists failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++   -D__LINUX__ -DUNIX -DLINUX -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:20: fatal error: Device.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+
+Determining if files sys/types.h;linux/videodev.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:3:28: fatal error: linux/videodev.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <linux/videodev.h>
+
+
+int main(){return 0;}
+
+Determining if files yarp/os/all.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:25: fatal error: yarp/os/all.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <yarp/os/all.h>
+
+
+int main(){return 0;}
+
+Determining if files yarp/sig/all.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:26: fatal error: yarp/sig/all.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <yarp/sig/all.h>
+
+
+int main(){return 0;}
+
+Determining if files unicap.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:20: fatal error: unicap.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <unicap.h>
+
+
+int main(){return 0;}
+
+Determining if files usb.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:17: fatal error: usb.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <usb.h>
+
+
+int main(){return 0;}
+
+Determining if the function main exists in the roboop failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -Wall  -DCHECK_FUNCTION_EXISTS=main   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+/usr/share/cmake-2.8/Modules/CheckFunctionExists.c:9:5: error: conflicting types for ‘main’
+/usr/share/cmake-2.8/Modules/CheckFunctionExists.c:3:6: note: previous declaration of ‘main’ was here
+/usr/share/cmake-2.8/Modules/CheckFunctionExists.c: In function ‘main’:
+/usr/share/cmake-2.8/Modules/CheckFunctionExists.c:11:3: error: too few arguments to function ‘main’
+/usr/share/cmake-2.8/Modules/CheckFunctionExists.c:9:5: note: declared here
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+
+Determining if files phidget21.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:23: fatal error: phidget21.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <phidget21.h>
+
+
+int main(){return 0;}
+
+Determining if files /include/canlib.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:29: fatal error: /include/canlib.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include </include/canlib.h>
+
+
+int main(){return 0;}
+
+Determining if files robotinocom.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:25: fatal error: robotinocom.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <robotinocom.h>
+
+
+int main(){return 0;}
+
+Determining if files xtimer.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:20: fatal error: xtimer.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <xtimer.h>
+
+
+int main(){return 0;}
+
+Determining if files xthread.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:21: fatal error: xthread.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <xthread.h>
+
+
+int main(){return 0;}
+
+Determining if files libusbSR.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:22: fatal error: libusbSR.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <libusbSR.h>
+
+
+int main(){return 0;}
+
+Determining if the include file libMesaSR.h exists failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++    -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:23: fatal error: libMesaSR.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+
+Determining if files isense/isense.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:27: fatal error: isense/isense.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <isense/isense.h>
+
+
+int main(){return 0;}
+
+Determining if files sphinx2/ckd_alloc.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:31: fatal error: sphinx2/ckd_alloc.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <sphinx2/ckd_alloc.h>
+
+
+int main(){return 0;}
+
+Determining if the include file SVS/svsclass.h exists failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++    -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:26: fatal error: SVS/svsclass.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.cxx.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+
+Determining if files linux/wireless.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+In file included from /usr/include/linux/wireless.h:74:0,
+                 from /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:
+/usr/include/linux/if.h:179:19: error: field ‘ifru_addr’ has incomplete type
+/usr/include/linux/if.h:180:19: error: field ‘ifru_dstaddr’ has incomplete type
+/usr/include/linux/if.h:181:19: error: field ‘ifru_broadaddr’ has incomplete type
+/usr/include/linux/if.h:182:19: error: field ‘ifru_netmask’ has incomplete type
+/usr/include/linux/if.h:183:20: error: field ‘ifru_hwaddr’ has incomplete type
+In file included from /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:0:
+/usr/include/linux/wireless.h:751:19: error: field ‘addr’ has incomplete type
+/usr/include/linux/wireless.h:777:18: error: field ‘bssid’ has incomplete type
+/usr/include/linux/wireless.h:835:18: error: field ‘addr’ has incomplete type
+/usr/include/linux/wireless.h:848:18: error: field ‘addr’ has incomplete type
+/usr/include/linux/wireless.h:861:18: error: field ‘bssid’ has incomplete type
+/usr/include/linux/wireless.h:869:18: error: field ‘src_addr’ has incomplete type
+/usr/include/linux/wireless.h:880:18: error: field ‘bssid’ has incomplete type
+/usr/include/linux/wireless.h:934:18: error: field ‘ap_addr’ has incomplete type
+/usr/include/linux/wireless.h:935:18: error: field ‘addr’ has incomplete type
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <linux/wireless.h>
+
+
+int main(){return 0;}
+
+Determining if files libparticle.h exist failed with the following output:
+Change Dir: /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:25: fatal error: libparticle.h: No such file or directory
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/usr/local/src/player-3.0.2/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source:
+/* */
+#include <libparticle.h>
+
+
+int main(){return 0;}
+
