@@ -11,3 +11,5 @@ TODO - split into topics instead of programs
 SLAM - programs dealing with robotic mapping and simultaneous localization and mapping
 
 Papers - helpful papers others have written, as well as documentation of our papers.
+
+Videos - Tutorial videos we made in Summer 2014 to document common lab procedures.
